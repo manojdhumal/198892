@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { HashLocationStrategy, LocationStrategy} from '@angular/common'
 
 
 @NgModule({
@@ -26,8 +27,9 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpModule,
     FormsModule, ReactiveFormsModule,
+    
   ],
-  providers: [CommonDataService, ApiService],
+  providers: [CommonDataService, ApiService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

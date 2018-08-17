@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   apiUrl: 'http://localhost:3000',
   apacheApiUrl:'http://www.eyeson.co.in/smartApp/api/User-reg-mgmt/v1/',
   jbossApiUrl: 'http://localhost:8080/smartApp/ns1/user-reg/getotp/'
