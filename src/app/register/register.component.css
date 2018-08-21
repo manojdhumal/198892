@@ -41,34 +41,43 @@ border-radius:4px;
 }
 a{
 	color: rgb(243, 167, 52) !important;}
-	a:hover {
+a:hover {
 		color: rgb(243, 167, 52) !important;}
 
-		.detactive-tabs .tab-content{
-padding:30px 0px;
-		}
+.detactive-tabs .tab-content{
+	padding:30px 0px;
+	font-size: 13px !important;
+}
 
 /* comman css */
-		.btn-default {
-			background-color: transparent;
-			border-color: #ffaf36;
-			color: #ffaf36;
-			font-size: 14px;
-			letter-spacing: 0.5px;
-			font-weight: bold;
-			text-transform: uppercase;
-			border: 2px solid;
-		}
-		.btn-default:hover {
-			background-color: #ffaf36;
-			border-color: #ffaf36;
-			color: #fff;
-		}
-		.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default.focus:active, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open >.dropdown-toggle.btn-default:focus, .open> .dropdown-toggle.btn-default:hover {
-			/* background-color: #ffaf36;
-			border-color: #ffaf36;
-			color: #fff; */
-			
-		}
-		.btn-default.focus, .btn-default:focus {
-			background-color: transparent;}
+.btn-default {
+	background-color: transparent;
+	border-color: #ffaf36;
+	color: #ffaf36;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px solid;
+}
+.btn-default:hover {
+	background-color: #ffaf36;
+	border-color: #ffaf36;
+	color: #fff;
+}
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default.focus:active, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open >.dropdown-toggle.btn-default:focus, .open> .dropdown-toggle.btn-default:hover {
+	/* background-color: #ffaf36;
+	border-color: #ffaf36;
+	color: #fff; */
+	
+}
+.btn-default.focus, .btn-default:focus {
+	background-color: transparent;
+}
+
+
+.disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.5;
+}

@@ -13,9 +13,16 @@ export class CommonDataService {
 
   // Simulate POST /getotp
   getOtp(mobile: Number): Observable<User> {
-
+    
+      
     return  this.api.getOtp(mobile);
   }
+
+  verifyOtp(object): Observable<User> {    
+        return  this.api.verifyOtp(object);
+  }
+
+  
 
 
 

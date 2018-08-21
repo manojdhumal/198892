@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-const API_URL = environment.jbossApiUrl;
+const API_URL = environment.awsURl;
 
 @Injectable()
 export class ApiService {
@@ -17,20 +17,42 @@ export class ApiService {
   }
 
 
-  public  getOtp(mobile:Number): Observable<User> {
+  public  getOtp(mobile): Observable<User> {
     // var obj : User;
     // obj.userRegistrationDto=null;
     // obj.userStatus= "CREATE_NEW_USER"
-    
-    return this.http
-      .get(API_URL + 'getotp')
+    console.log()
+    let body = new URLSearchParams();
+    body.set('mobile', mobile);
+    return this.http    
+      .post(API_URL + 'get-otp',{mobile:mobile})
       .map(response => {
+       console.log("GOT Succcess Full ");
+       console.log(response.json());
+        
         const userDetails = response.json();
         return userDetails;
       })
       .catch(this.handleError);
   }
 
+  public  verifyOtp(otpDetails): Observable<User> {
+    // var obj : User;
+    // obj.userRegistrationDto=null;
+    // obj.userStatus= "CREATE_NEW_USER"
+    console.log(otpDetails)
+    return this.http      
+      .post(API_URL + 'verify-otp',{mobile:otpDetails.mobile,otp: otpDetails.otp})
+      .map(response => {
+        console.log("GOT otp Success ");
+        console.log(response.json());
+        const userDetails = response.json();
+        return userDetails;
+      })
+      .catch(this.handleError);
+  }
+  
+  
 
 
 /*

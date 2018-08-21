@@ -15,23 +15,27 @@
       <div class="col-md-4">
         <form [formGroup]="otpForm" (ngSubmit)="getOtp(otpForm.value)" class="form-inline">
           <div class="form-group" [ngClass]="{'has-error':!otpForm.controls['mobileNo'].valid && otpForm.controls['mobileNo'].touched}">
-            <input class="form-control" type="text" placeholder="Enter Mobile Number" [formControl]="otpForm.controls['mobileNo']">
+            <input class="form-control" type="text" maxlength="10" placeholder="Enter Mobile Number" [formControl]="otpForm.controls['mobileNo']">
           </div>
-          <button type="submit" class="btn btn-default" ng-click="getOtp()" [disabled]="!otpForm.valid">Generate OTP</button>
+          <button type="submit" class="btn btn-default" [disabled]="!otpForm.valid">Generate OTP</button>
         </form>
       </div>
-      <div class="col-md-4">
-        <form [formGroup]="verifyForm" (ngSubmit)="submitForm(verifyForm.value)" class="form-inline">
-          <div class="form-group" [ngClass]="{'has-error':!verifyForm.controls['otp'].valid && verifyForm.controls['otp'].touched}">
-            <input class="form-control" type="text" placeholder="Enter OTP" [formControl]="verifyForm.controls['otp']">
+      <div class="col-md-4 " [ngClass]="{ 'disabled': otpDisable }" >
+        <form  [formGroup]="verifyForm" (ngSubmit)="verifyOtp(verifyForm.value)" class="form-inline">
+          <div   class="form-group" [ngClass]="{'has-error':!verifyForm.controls['otp'].valid && verifyForm.controls['otp'].touched}">
+            <input   class="form-control" type="text" placeholder="Enter OTP" [formControl]="verifyForm.controls['otp']">
           </div>
-          <button type="submit" class="btn btn-default" [disabled]="!verifyForm.valid" ng-click="getOtp()">Verify</button>
+          <button type="submit" class="btn btn-default" [disabled]="!verifyForm.valid" >Verify</button>
         </form>
+      </div>
+      <div class="form-inline">       
+        <p style="color: black;">{{responseMsg}} </p>
+        <!-- <button class="btn btn-default">Cancel</button> -->
       </div>
     </div>
   </div>
   <hr>
-  <div class="detactive-tabs">
+  <div class="detactive-tabs" >
     <ul class="nav nav-pills nav-justified">
       <li class="active">
         <a data-toggle="tab" href="#home">Personal</a>
