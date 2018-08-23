@@ -22,6 +22,10 @@ export class CommonDataService {
         return  this.api.verifyOtp(object);
   }
 
+  saveUser(object): Observable<User> {    
+    return  this.api.saveUser(object);
+  }
+  
   
 
 

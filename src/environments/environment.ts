@@ -5,8 +5,8 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:3000',
-  apacheApiUrl:'http://www.eyeson.co.in/smartApp/api/User-reg-mgmt/v1/',
-  jbossApiUrl: 'http://localhost:8080/smartApp/ns1/user-reg/getotp/',
-  awsURl: 'http://192.168.1.4:82/smartApp/api/User-reg-mgmt/v1/'
+  // apiUrl: 'http://localhost:3000',
+  // apacheApiUrl:'http://www.eyeson.co.in/smartApp/api/User-reg-mgmt/v1/',
+  // jbossApiUrl: 'http://localhost:8080/smartApp/ns1/user-reg/getotp/',
+  awsURl: '/smartApp/api/User-reg-mgmt/v1/'
 };

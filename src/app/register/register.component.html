@@ -14,28 +14,28 @@
     <div class="row">
       <div class="col-md-4">
         <form [formGroup]="otpForm" (ngSubmit)="getOtp(otpForm.value)" class="form-inline">
-          <div class="form-group" [ngClass]="{'has-error':!otpForm.controls['mobileNo'].valid && otpForm.controls['mobileNo'].touched}">
-            <input class="form-control" type="text" maxlength="10" placeholder="Enter Mobile Number" [formControl]="otpForm.controls['mobileNo']">
+          <div class="form-group" [ngClass]="{'has-error':!otpForm.controls['mobile'].valid && otpForm.controls['mobile'].touched}">
+            <input class="form-control" type="text" maxlength="10" placeholder="Enter Mobile Number" [formControl]="otpForm.controls['mobile']">
           </div>
           <button type="submit" class="btn btn-default" [disabled]="!otpForm.valid">Generate OTP</button>
         </form>
       </div>
-      <div class="col-md-4 " [ngClass]="{ 'disabled': otpDisable }" >
-        <form  [formGroup]="verifyForm" (ngSubmit)="verifyOtp(verifyForm.value)" class="form-inline">
-          <div   class="form-group" [ngClass]="{'has-error':!verifyForm.controls['otp'].valid && verifyForm.controls['otp'].touched}">
-            <input   class="form-control" type="text" placeholder="Enter OTP" [formControl]="verifyForm.controls['otp']">
+      <div class="col-md-4 " [ngClass]="{ 'disabled': otpDisable }">
+        <form [formGroup]="verifyForm" (ngSubmit)="verifyOtp(verifyForm.value)" class="form-inline">
+          <div class="form-group" [ngClass]="{'has-error':!verifyForm.controls['otp'].valid && verifyForm.controls['otp'].touched}">
+            <input class="form-control" type="text" placeholder="Enter OTP" [formControl]="verifyForm.controls['otp']">
           </div>
-          <button type="submit" class="btn btn-default" [disabled]="!verifyForm.valid" >Verify</button>
+          <button type="submit" class="btn btn-default" [disabled]="!verifyForm.valid">Verify</button>
         </form>
       </div>
-      <div class="form-inline">       
-        <p style="color: black;">{{responseMsg}} </p>
+      <div class="form-inline">
+        <p style="color: black; font-size:14px;">{{responseMsg}} </p>
         <!-- <button class="btn btn-default">Cancel</button> -->
       </div>
     </div>
   </div>
   <hr>
-  <div class="detactive-tabs" >
+  <div class="detactive-tabs">
     <ul class="nav nav-pills nav-justified">
       <li class="active">
         <a data-toggle="tab" href="#home">Personal</a>
@@ -47,15 +47,16 @@
         <a data-toggle="tab" href="#menu2">Print Application</a>
       </li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content" [ngClass]="{ 'disabled': formDisable }">
       <div id="home" class="tab-pane fade in active">
-        <form class="form-horizontal">
+
+        <form [formGroup]="registrationForm" class="form-horizontal" (ngSubmit)="saveUser(registrationForm.value)">
           <div class="form-group">
             <div class="row">
               <div class="col-md-12">
                 <label class="control-label col-sm-3">Registration Id:</label>
                 <div class="col-sm-8">
-                  <label class="control-label">1354</label>
+                  <label class="control-label">{{userForm.registrationId}}</label>
                 </div>
               </div>
             </div>
@@ -65,22 +66,22 @@
               <div class="col-md-12">
                 <label class="control-label col-sm-3"> Name of Candidate:</label>
                 <div class=" col-sm-3">
-                  <input class="form-control" type="text" placeholder="Enter First Name" [ngClass]="{'has-error':!registrationForm.controls['firstName'].valid}"
-                    [formControl]="registrationForm.controls['firstName']">
+                  <input class="form-control" name="firstName" [(ngModel)]="userForm.firstName" type="text" placeholder="Enter First Name"
+                    [ngClass]="{'has-error':!registrationForm.controls['firstName'].valid}" [formControl]="registrationForm.controls['firstName']">
                 </div>
                 <!-- We are using the ngClass directive to conditionally add a class to our div if the form is invalid -->
                 <div class=" col-sm-3">
-                  <input class="form-control" type="text" placeholder="Enter middle Name" [ngClass]="{'has-error':!registrationForm.controls['middleName'].valid}"
-                    [formControl]="registrationForm.controls['lastName']">
+                  <input class="form-control" name="middleName" [(ngModel)]="userForm.middleName" type="text" placeholder="Enter middle Name"
+                    [ngClass]="{'has-error':!registrationForm.controls['middleName'].valid}" [formControl]="registrationForm.controls['middleName']">
                 </div>
                 <div class=" col-sm-3">
-                  <input class="form-control" type="text" placeholder="Enter Last Name" [ngClass]="{'has-error':!registrationForm.controls['lastName'].valid}"
+                  <input class="form-control" name="lastName" [(ngModel)]="userForm.lastName" type="text" placeholder="Enter Last Name" [ngClass]="{'has-error':!registrationForm.controls['lastName'].valid}"
                     [formControl]="registrationForm.controls['lastName']">
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" class="form-group">
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label col-sm-6">Date of Birth:</label>
@@ -90,17 +91,18 @@
                     <span class="input-group-addon"></span>
                     <span class="glyphicon glyphicon-calendar"></span>
                   </div> -->
-                  <input type="date" data-date-inline-picker="true" />
+                  <input type="text" data-date-inline-picker="false" name="dateOfBirth" [(ngModel)]="userForm.dateOfBirth" [formControl]="registrationForm.controls['dateOfBirth']"
+                      placeholder="YYYY-DD-MM" />
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">Gender:</label>
                 <div class="col-sm-6">
                   <label class="radio-inline">
-                    <input type="radio" name="gender" value="Male" [formControl]="registrationForm.controls['gender']"> Male
+                    <input type="radio" [(ngModel)]="userForm.gender" name="gender" value="M" [formControl]="registrationForm.controls['gender']"> Male
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="gender" value="Famale" [formControl]="registrationForm.controls['gender']"> female
+                    <input type="radio" [(ngModel)]="userForm.gender" name="gender" value="F" [formControl]="registrationForm.controls['gender']"> female
                   </label>
                 </div>
               </div>
@@ -108,51 +110,58 @@
               <div class="form-group">
                 <label class="control-label col-sm-6">Domicile:</label>
                 <div class="col-sm-6">
-                  <select class="form-control" id="sel1">
-                    <option>Maharashtra</option>
-                    <option>Gujrat</option>
-                    <option>Madya Pradesh</option>
-                    <option>Asam</option>
+                  <select class="form-control" name="domicile" [(ngModel)]="userForm.domicile" [formControl]="registrationForm.controls['domicile']">
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Madya Pradesh">Madya Pradesh</option>
+                    <option value="Asam"> Asam</option>
                   </select>
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6" for="sel1">Email ID:</label>
                 <div class=" col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter Email">
+                  <input class="form-control" name="emailAddr" [(ngModel)]="userForm.emailAddr" [formControl]="registrationForm.controls['emailAddr']"
+                    type="text" placeholder="Enter Email">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">Qualification:</label>
                 <div class="col-sm-6">
+                  <input class="form-control" name="qualification" [(ngModel)]="userForm.qualification" [formControl]="registrationForm.controls['qualification']"
+                    type="text" placeholder="Enter qualificaton ">
+                </div>
+                <!-- <div class="col-sm-6">
                   <select class="form-control" id="sel1">
                     <option>Post Graduation</option>
                     <option>Gradution</option>
                     <option>PHD</option>
                     <option>Other</option>
                   </select>
-                </div>
+                </div> -->
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">Address line 1:</label>
                 <div class="col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter Address line 1">
+                  <input class="form-control" name="addressLine1" [(ngModel)]="userForm.addressLine1" [formControl]="registrationForm.controls['addressLine1']"
+                    type="text" placeholder="Enter Address line 1">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">City:</label>
                 <div class="col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter City Name">
+                  <input class="form-control" name="city" [(ngModel)]="userForm.city" [formControl]="registrationForm.controls['city']" type="text"
+                    placeholder="Enter City Name">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">Country:</label>
                 <div class="col-sm-6">
-                  <select class="form-control" id="sel1">
-                    <option>India</option>
-                    <option>USA</option>
-                    <option>China</option>
-                    <option>Rasia</option>
+                  <select class="form-control" name="country" [formControl]="registrationForm.controls['country']" [(ngModel)]="userForm.country">
+                    <option value="I">India</option>
+                    <option value="U">USA</option>
+                    <option value="C">China</option>
+                    <option value="R">Rasia</option>
                   </select>
                 </div>
               </div>
@@ -164,11 +173,11 @@
               <div class="form-group">
                 <label class="control-label col-sm-6" for="sel1">Nationality:</label>
                 <div class="col-sm-6">
-                  <select class="form-control" id="sel1">
-                    <option>Indian</option>
-                    <option>USA</option>
-                    <option>China</option>
-                    <option>Rasia</option>
+                  <select class="form-control" name="nationality" [(ngModel)]="userForm.nationality" [formControl]="registrationForm.controls['nationality']">
+                    <option value="I">Indian</option>
+                    <option value="U">USA</option>
+                    <option value="C">China</option>
+                    <option value="R">Rasia</option>
                   </select>
                 </div>
               </div>
@@ -176,10 +185,10 @@
                 <label class="control-label col-sm-6" for="sel1">Marital status:</label>
                 <div class="col-sm-6">
                   <label class="radio-inline">
-                    <input type="radio" name="optradio" checked>Married
+                    <input type="radio" name="maritalStatus" value="M" [(ngModel)]="userForm.maritalStatus" [formControl]="registrationForm.controls['maritalStatus']"> Married
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="optradio">Unmarried
+                    <input type="radio" name="maritalStatus" value="U" [(ngModel)]="userForm.maritalStatus" [formControl]="registrationForm.controls['maritalStatus']">Unmarried
                   </label>
                 </div>
               </div>
@@ -187,69 +196,62 @@
                 <label class="control-label col-sm-6" for="sel1">Physically challanged:</label>
                 <div class="col-sm-6">
                   <label class="radio-inline">
-                    <input type="radio" name="optradio" checked>Yes
+                    <input type="radio" name="physicallyChallenged" value="Y" [(ngModel)]="userForm.physicallyChallenged" [formControl]="registrationForm.controls['physicallyChallenged']">Yes
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="optradio">No
+                    <input type="radio" name="physicallyChallenged" value="N" [(ngModel)]="userForm.physicallyChallenged" [formControl]="registrationForm.controls['physicallyChallenged']">No
                   </label>
                 </div>
               </div>
+
               <div class="form-group">
-                <label class="control-label col-sm-6" for="sel1">PAN card:</label>
-                <!-- <div class="col-sm-2">
-                  <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </div> -->
-                <div class=" col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter PAN">
+                <label class="control-label col-sm-6" for="sel1">Pincode</label>
+                <div class="col-sm-6">
+                  <input class="form-control" type="text" placeholder="Enter pincode" [(ngModel)]="userForm.pinCode" name="pinCode" [formControl]="registrationForm.controls['pinCode']">
                 </div>
               </div>
+
               <div class="form-group">
                 <label class="control-label col-sm-6" for="sel1">Other Qualification:</label>
                 <div class=" col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter Other Qualification Details">
+                  <input class="form-control" type="text" placeholder="Enter Other Qualification Details" name="qualificationOther" [(ngModel)]="userForm.qualificationOther"
+                    [formControl]="registrationForm.controls['qualificationOther']">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6">Address line 2:</label>
                 <div class="col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter Address line 2">
+                  <input class="form-control" type="text" placeholder="Enter Address line 2" name="addressLine2" [(ngModel)]="userForm.addressLine2"
+                    [formControl]="registrationForm.controls['addressLine2']">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-6" for="sel1">State:</label>
                 <div class="col-sm-6">
-                  <select class="form-control" id="sel1">
-                    <option>Maharashtra</option>
-                    <option>Gujrat</option>
-                    <option>Madya Pradesh</option>
-                    <option>Asam</option>
+                  <select class="form-control" name="state" [(ngModel)]="userForm.state" [formControl]="registrationForm.controls['state']">
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Madya Pradesh">Madya Pradesh</option>
+                    <option value="Asam"> Asam</option>
                   </select>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-sm-6" for="sel1">Pincode</label>
-                <div class="col-sm-6">
-                  <input class="form-control" type="text" placeholder="Enter pincode">
-                </div>
-              </div>
+
             </div>
+
           </div>
           <div class="form-group">
             <div class="row">
               <div class="col-md-12 text-right">
-                <button class="btn btn-default"> SAVE</button>
+                <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-default"> SAVE</button>
               </div>
             </div>
           </div>
-          <!-- <div class="form-group " [ngClass]="{'has-error':!registrationForm.controls['gender'].valid}">
+        </form>
+        <!-- <div class="form-group " [ngClass]="{'has-error':!registrationForm.controls['gender'].valid}">
             <label>Gender</label>
             <!-- Here we are using the ngIf directive to display an error message if the user has not selected a gender since we can’t color the radio buttons. -->
-          <!-- <div class="alert alert-danger" *ngIf="!registrationForm.controls['gender'].valid">You must select a gender.</div>
+        <!-- <div class="alert alert-danger" *ngIf="!registrationForm.controls['gender'].valid">You must select a gender.</div>
           </div>
           <div class="radio">
             <label class="radio-inline">
@@ -261,7 +263,7 @@
               <input type="radio" name="gender" value="Female" [formControl]="registrationForm.controls['gender']"> Female
             </label>
           </div> -->
-        </form>
+
       </div>
       <div id="menu1" class="tab-pane fade">
         <form class="form-horizontal">

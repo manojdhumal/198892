@@ -21,7 +21,7 @@ export class ApiService {
     // var obj : User;
     // obj.userRegistrationDto=null;
     // obj.userStatus= "CREATE_NEW_USER"
-    console.log()
+   
     let body = new URLSearchParams();
     body.set('mobile', mobile);
     return this.http    
@@ -40,7 +40,7 @@ export class ApiService {
     // var obj : User;
     // obj.userRegistrationDto=null;
     // obj.userStatus= "CREATE_NEW_USER"
-    console.log(otpDetails)
+    
     return this.http      
       .post(API_URL + 'verify-otp',{mobile:otpDetails.mobile,otp: otpDetails.otp})
       .map(response => {
@@ -52,6 +52,21 @@ export class ApiService {
       .catch(this.handleError);
   }
   
+  public saveUser(userDetails): Observable<User> {
+    // var obj : User;
+    // obj.userRegistrationDto=null;
+    // obj.userStatus= "CREATE_NEW_USER"
+    
+    return this.http      
+      .post(API_URL + 'save-update-user',userDetails)
+      .map(response => {
+        console.log("GOT otp Success ");
+        console.log(response.json());
+        const userDetails = response.json();
+        return userDetails;
+      })
+      .catch(this.handleError);
+  }
   
 
 
