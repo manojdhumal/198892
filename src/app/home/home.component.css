@@ -57,15 +57,15 @@ font-weight: bold;
 	margin-top: 20px;
 }
 /*----Carousel-example css --*/
-.carousel-indicators {
+/* .carousel-indicators {
 	left: 106%;
 	bottom: 35%;
 	width: auto;
-}
+} */
 .carousel-indicators li {
 	background-color: #36a8ff;
 	border: none;
-	display: block;
+	display: inline-block;
 	margin: 5px;
 }
 .carousel-indicators .active {
@@ -76,17 +76,29 @@ font-weight: bold;
 }
 /*--Carousel-caption css ----*/
 .carousel-caption {
-	left: 24%;
+	/* left: 24%;
 	position: absolute;
-	text-align: left;
-	color: #353b40;
+	text-align: left; */
+	color: #fff;
 	bottom: 25%;
+	/* text-shadow: none; */
+}
+.carousel-caption p {
+	color: #fff;
+}
+.contact-info{
+	
+	position: absolute;
+	text-align: right;
+	right:0%;
+	bottom:10%;
+	background-color:#353b40;
 }
 .carousel-caption h6 {
 	margin-bottom: -03px;
 }
 .carousel-heading {
-	font-size: 43px;
+	font-size: 30px;
 	font-weight: bolder;
 	margin-bottom: 5px;
 }
@@ -98,8 +110,7 @@ font-weight: bold;
 	list-style:none;
 }
 .carousel-content a {
-	background-color: #ffaf36;
-	color: #353b40 !important;
+	color: #ffaf36;
 }
 .carousel-content > li > a:hover, .carousel-content > li > a:focus {
 	background-color: transparent;
@@ -227,6 +238,9 @@ font-weight: bold;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
+/* .services-blog{
+	padding-bottom:30px;
+} */
 .analize {
 	background-color: #eaeff3;
 	/*margin-top: 50px;*/
@@ -336,9 +350,10 @@ font-weight: bold;
 	padding-bottom: 50px;
 }
 hr {
-	border-color: #ccc -moz-use-text-color -moz-use-text-color;
+	border-color: #ccc -moz-use-text-color -moz-use-text-color !important;
 	margin-bottom: 10px;
 	margin-top: 10px;
+	border: 1px  !important;
 }
 .heading {
 	font-size: 16px;
@@ -436,7 +451,7 @@ hr {
 }
 .social{
 	padding:0px;
-	margin:40px 0px;
+	margin:20px 0px;
 }
 .social li{
 	display: inline-block;
@@ -459,7 +474,9 @@ hr {
 	display: inline;
 }
 .contact hr {
-	border-color: #373839 -moz-use-text-color -moz-use-text-color;
+	/* border-color: #373839 -moz-use-text-color -moz-use-text-color !important; */
+	border-top:1px solid #7a7a7a !important;
+	padding:4px 0px;
 }
 .navigation {
 	color: #fff;
@@ -475,7 +492,7 @@ hr {
 	margin-bottom: 20px;
 }
 .navigation a {
-	color: #7b7b7c;
+	color: #7b7b7c !important;
 	text-decoration: none;
 }
 .form-control {
@@ -483,7 +500,7 @@ hr {
 	border: 1px solid #7a7a7a;
 	border-radius: 0;
 	box-shadow: none;
-	height: 40px;
+	height: 55px;
 	line-height: 40px;
 }
 #name {
