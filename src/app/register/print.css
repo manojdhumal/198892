@@ -1,0 +1,7 @@
+/*
+All common (screen) styles here, in the normal way.
+*/
+@media print {
+    * { display: none; }/* Hide everything ... */
+    #mydiv { display: block; }/* ... except the required div */
+  }

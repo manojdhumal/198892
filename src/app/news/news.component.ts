@@ -11,6 +11,8 @@ export class NewsComponent implements OnInit {
 
   contactForm;
   responseMsg='';
+  newsView=0;
+  date = new Date();
   constructor(private commonDataService: CommonDataService, private fb: FormBuilder) {
     this.contactForm = fb.group({
       'name':[null, Validators.compose([Validators.required,Validators.minLength(1), Validators.maxLength(25)])],
@@ -48,6 +50,15 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  ngAfterViewInit() {
+    window.scrollTo(0, 0);
+  } 
+
+  changeView(viewind: number){
+    console.log("changing view:", viewind)
+    this.newsView=viewind;
+    window.scrollTo(0, 0);
   }
 
 }

@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
   contactForm;
   responseMsg='';
+  date = new Date();
   constructor(private commonDataService: CommonDataService, private fb: FormBuilder) {
     this.contactForm = fb.group({
       'name':[null, Validators.compose([Validators.required,Validators.minLength(1), Validators.maxLength(25)])],

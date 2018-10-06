@@ -1,0 +1,405 @@
+<div class="header">
+  <div class="top-nav">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="row">
+            <div class="col-md-5">
+              <i class="fa fa-envelope"></i> &nbsp;&nbsp; info@eyeson.co.in</div>
+            <div class="col-md-7">
+              <i class="fa fa-phone"></i> &nbsp;&nbsp;91 9403020116</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12 text-right">
+          <a style="color:#353b40 !important;" href="/#/register">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="../../assets/img/eyeson.png" class="img-responsive" alt="">
+              <!-- <font style="Color:white; font-weight: bold; font-size:30px;">EYES</font>
+                  <font style="Color:#ffaf36; font-weight: bold; font-size:25px;">ON</font> -->
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="navbar-right">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="/#/home"> Home </a>
+                </li>
+                <li>
+                  <a href="/#/about"> About us </a>
+                </li>
+                <li class=" dropdown ">
+                  <a href="/#/services" class=" dropdown-toggle" data-toggle="dropdown"> Services </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/#/cservices">Corporate Services</a>
+                    </li>
+                    <li>
+                      <a href="/#/services"> Personal Services</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="active">
+                  <a href="/#/news"> News </a>
+                </li>
+                <li>
+                  <a href="/#/contact"> Contact</a>
+                </li>
+
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container- -->
+  </nav>
+</div>
+<div class="clearfix"></div>
+<!--slider HTML section is here-->
+<!-- <div class="section">
+  
+    <div id="carousel-example" class="carousel slide " data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example" data-slide-to="1"></li>
+        <li data-target="#carousel-example" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="item active">
+            <a href="#">
+              <img src="../../assets/img/banner-1.jpg" />
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="../../assets/img/banner-2.jpg" />
+            </a> 
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="../../assets/img/banner-3.jpg" />
+            </a>
+        </div>
+      </div>
+    </div>
+  
+  </div> -->
+
+
+<!--Home HTML section is here-->
+
+
+<div class="news">
+  <div *ngIf="newsView==0" class="container">
+    <div class="row news-caption">
+      <div class="col-md-4">
+        <div class="caption">
+          <h2> News
+            <p>
+              <i> From Our Blog </i>
+            </p>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- <div class="col-md-1 col-sm-1">
+        <div class="blog">
+
+
+          <p>{{date| date :'dd-MMM-yyyy'}}</p>
+          <span style="height:1px; background:#e2971e; display:block; float:left; width:100%"></span>
+          <span style="height:1px; background:#000; display:block; float:left; width:20%;"></span>
+
+        </div>
+
+        <div class="comment">
+          <img src="../../assets/img/comment-icon.png" />
+          <p> 8-com</p>
+
+          <span style="height:1px; background:#e2971e; display:block; float:left; width:100%"></span>
+          <span style="height:1px; background:#000; display:block; float:left; width:20%;"></span>
+
+        </div>
+
+        <div class="view">
+          <img src="../../assets/img/view-icon.png" />
+          <p> 16-view</p>
+        </div>
+      </div> -->
+      <!-- <div class="col-md-5 col-sm-5">
+        <img src="../../assets/img/news-blog.jpg" class="img-responsive" />
+        <br>
+        <div class="heading">DIVORCE INVESTIGATION</div>
+        <p>Divorces are unpleasant and sometimes a deadly fight. The partners can go to the extent of harming or planning
+            harm to the life. There might be cases of false claims for getting more alimony from the husband. Such things
+             need to be investigated. Call us for a professional detective service and you will be happy about this one
+            decision.
+         </p>
+      </div> -->
+
+      <div class="row p-30">
+        <div class="col-md-3">
+          <img class="img-responsive" src="../../assets/img/Services_2_1.jpg">
+        </div>
+        <div class="col-md-9">
+          <div class="title1">PRE-MARITAL INVESTIGATION: </div>
+          <p class="sub-heading"> 1-Aug-2018 </p>
+          <p>There is no denying the fact that today’s relationships are riskier than yesterdays or the earlier generations.
+            With the passage of time, the values like truthfulness, loyalty, love are losing their sheen.....
+        </p>
+        <button class="btn btn-default" (click)="changeView(1)"> Read More</button>
+        </div>
+       
+      </div>
+     <br><br>
+      <div class="row p-30">
+       
+        <div class="col-md-9">
+        
+          <div class="title1">EMPLOYEE BACKGROUND VERIFICATION: </div>
+          <p class="sub-heading"> 4-Sept-2018 </p>
+          <p>There is no denying the fact that today’s relationships are riskier than yesterdays or the earlier generations.
+            With the passage of time, the values like truthfulness, loyalty, love are losing their sheen.....
+        </p>
+        <button class="btn btn-default" (click)="changeView(2)"> Read More</button>
+        </div>
+        <div class="col-md-3">
+            <img class="img-responsive" src="../../assets/img/Services_1_1.jpg">
+        </div>
+        
+      </div>
+
+      <!-- <div class="col-md-6 col-sm-6">
+        <div class="heading"> </div>
+       
+        <br>
+        <br>
+        <hr>
+        <div class="heading">EMPLOYEE BACKGROUND VERIFICATION</div>
+        <p class="sub-heading"> 4-Sept-2018 </p>
+        <p>Employees and employers trust each other and a work culture thus created takes both of them ahead in their respective goals.
+            Getting information about the employer is very easy as everything is open to be shared to the people.....
+          </p>
+        <button class="btn btn-default" (click)="changeView(2)"> Read More</button>
+        <br>
+        <br>
+      </div> -->
+    </div>
+  </div>
+
+  <div *ngIf="newsView==1" id="blog1" class="container">
+  
+      
+        <div class="col-md-9">
+            <span style="color: orange !important;font-weight: bold;">PRE-MARITAL BACKGROUND CHECK:</span>
+            <br>  <br>
+            <span style="color: orange !important;"> SUSPECT, INSPECT AND THEN to be TRUSTED</span>        </div>
+        <div class="col-md-3">
+           <img class="img-responsive" src="../../assets/img/Services_2_1.jpg">
+        </div>
+       <p>
+       
+        There is no denying the fact that today’s relationships are riskier than yesterdays or the earlier generations. With the passage of time,
+         the values like truthfulness, loyalty, love are losing their sheen.  The tools like the smart phone and social media have added fuel to 
+         the fire and staying in touch with anyone and cheating on one another is a cake walk. Values have eroded and patience and tolerance 
+         needed to give time to a relationship to flourish has gone down. 
+         <br><br>
+        The youngsters today are living a life of instant gratification and having fun is always on the mind. In such a scenario, getting a life
+         partner who is truthful and trustworthy is nearly like winning a lottery! And how many times have you won a lottery? So, never take a 
+         chance with relationships that matter the most in life. Always make sure and never live by assumptions. It is easy to get into a marriage;
+          but getting out of it is a pain! 
+          <span style="color: orange !important;font-weight: bold;">Think wisely and be safe.</span>
+          <br><br> 
+        Imagine getting married to a person who is not faithful in the relationship. You will not only live a life full of lies, but it will 
+        be a loveless marriage which is a thorny trap. Even If you want to get out of the trap, it will bleed you of your peace of mind and 
+        will drain you of your energy fighting the legal battle. 
+        <br><br>
+        Isn’t it better <span style="color: orange !important;">not to trust the person you want to get married to </span>? It is always better to test the waters before getting into it.
+        It is always better to do a complete investigation of the person in question and that too from a professional detective agency 
+        like <span class="taglineText">Eyes On</span>. A detective agency is your best option as it saves you from the agony of a lifetime. Especially an agency like Eyes On;
+         that has young, daring and well trained team of agents.
+        <br><br> 
+        Do not risk the only life that you have got by living with a person whom you have not got tested. Get in touch with Eyes On, the
+         dynamic detective agency and be sure about everything. May you live your life peacefully. 
+        
+    </p>
+    <br>
+    <button class="btn btn-default" (click)="changeView(0)">Back</button>
+  </div>
+
+  <div *ngIf="newsView==2" id="blog2" class="container">
+      <div class="col-md-9">
+          <span style="color: orange !important;font-weight: bold;"> EMPLOYEE BACKGROUND VERIFICATION:</span>  
+      </div>
+      <div class="col-md-3">
+          <img class="img-responsive" src="../../assets/img/Services_1_1.jpg">
+      </div>
+    <p>      
+        
+        Employees and employers trust each other and a work culture thus created takes both of them ahead in their respective goals. 
+        Getting information about the employer is very easy as everything is open to be shared to the people. You can go to the company
+         website and check with past employees. Background checks about the recruiting company are easily accessible via ex-employees 
+         or even current employees of the organization through linked in like tools.  <br><br>
+        When it comes to verifying the credentials of an employee who has no past experience of working anywhere, it is a risky matter.
+         How do you verify that the person going to enter your organization is ethical, trustworthy and reliable! No one can be sure about 
+         a fresher. Passing the interview is a cake walk as the employee comes well prepared or trained with the questions that are going 
+         to be posed during the interview. With hi-tech scanners, printers and copiers, one can get certificates and mark sheets that look 
+         just like originals. So if such a fraud candidate passes the interview, in majority cases, only the qualification certificates are
+          checked casually. How many companies have the policy and tools of verifying the original documents? What about the character of 
+          the person? Does anyone check that? <br><br>
+        Majority of the organizations do not have any system to verify whether the candidate who has passed the interview has actually 
+        studied in the institutes or passed the exams as claimed in the profile. Verification of the character of the person which is very 
+        vital; is never done. So, a fraud person getting in the organization is not unlikely at all!  <br><br>
+        Do not play the gamble and risk the organizations safety. 
+        Call <span class="taglineText">Eyes On</span> Detective agency for a thorough verification of credentials 
+        and character. We do a background check not just involving the candidates certificates of education and training; but also about 
+        the character of that person. Our strict guidelines for Employee Background Verification ensure that you are hiring a right candidate. 
+        <br><br>
+        Many companies have suffered financial losses at the hands of employees whose background was not verified before employing them. 
+        There are so many criminal cases happening involving the drivers of Online cab service companies like Ola and Uber! Even well 
+        known courier companies have suffered at the hands of fraudsters. The Online business portals like Amazon, Snapdeal, Flipkart,
+         etc. also are defrauded regularly!  <br><br>
+        When a fraud is committed, the company not just loses money; but its reputation and image too! It finally affects the business 
+        adversely. Please do not employ anyone without a detailed background check. Avail the
+        <span style="color: orange !important;">EMPLOYEE BACKGROUND VERIFICATION </span> 
+        services of <span class="taglineText">Eyes On</span> detective agency and be safe. 
+        <span style="color: orange !important;font-weight: bold;">Better to be safe than sorry! </span>           
+        
+    </p>
+    <br>
+    <button class="btn btn-default" (click)="changeView(0)"> Back</button>
+  </div>
+
+
+</div>
+
+
+<!--contact-->
+<div class="contact">
+  <div class="container">
+    <div class="row contact-caption">
+      <div class="col-md-4 col-sm-4">
+
+        <a href="/#/home">
+          <img src="../../assets/img/eyeson.png" class="img-responsive" alt="">
+        </a>
+        <p>
+          Goodwill 24 Shoppee, Office No. 117, First Floor, Lohgaon, Pune – 411047 (Maharashtra)</p>
+        <hr>
+        <p>Phone: 9403020116</p>
+
+        <hr>
+        <p>fax: 9403020116</p>
+
+        <!-- social media icons -->
+        <ul class="social">
+          <li>
+            <a href="#">
+              <i class="fa fa-lg fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lg fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lg fa-google-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lg fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="title">NAVIGATION </div>
+        <ul class="navigation">
+          <li>
+            <a href="/#/home"> Home </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/#/about"> About us </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/#/cservices">Corporate Services</a>
+          </li>
+          <hr>
+          <li>
+            <a href="/#/services"> Personal Services</a>
+          </li>
+          <hr>
+          <li>
+            <a href="/#/news"> News </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/#/contact"> Contact</a>
+          </li>
+          <hr>
+        </ul>
+      </div>
+      <div class="col-md-5 col-sm-5">
+        <div class="title">QUICK CONTACT US</div>
+        <div>
+          <label style="color:white; font-size:12px; padding:5px 0px;" class="control-label col-sm-12">{{responseMsg}} </label>
+        </div>
+
+        <form [formGroup]="contactForm" role="form" (ngSubmit)="quickContact(contactForm.value)" class="form-inline">
+          <div class="form-group col-md-12" [ngClass]="{'has-error':!contactForm.controls['name'].valid && contactForm.controls['name'].touched}">
+            <input type="type" required class="form-control" maxlength="25" placeholder="Enter Name*" [formControl]="contactForm.controls['name']">
+          </div>
+          <div class="form-group col-md-12" [ngClass]="{'has-error':!contactForm.controls['emailAddr'].valid && contactForm.controls['emailAddr'].touched}">
+            <input type="type" required class="form-control" maxlength="25" placeholder="Enter Email*" [formControl]="contactForm.controls['emailAddr']">
+          </div>
+          <div class="form-group col-md-12" [ngClass]="{'has-error':!contactForm.controls['msg'].valid && contactForm.controls['msg'].touched}">
+            <input type="type" required class="form-control" maxlength="50" placeholder="Enter Message*" [formControl]="contactForm.controls['msg']">
+          </div>
+          <button type="submit" class="btn btn-default" [disabled]="!contactForm.valid">SUBMIT NOW</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+  $('.carousel').carousel({
+    interval: 10000 //changes the speed
+  })
+</script>
+<!-- </body>
+  
+  </html> -->
